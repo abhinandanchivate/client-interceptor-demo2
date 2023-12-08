@@ -1,0 +1,53 @@
+<section class="container">
+  <h1 class="large text-primary">Sign Up</h1>
+  <p class="lead">
+    <i class="fas fa-user"></i> Create Your Account{{ err | json }}
+  </p>
+  <form class="form" (ngSubmit)="registerSubmit()">
+    <div class="form-group">
+      <input
+        type="text"
+        placeholder="Name"
+        name="name"
+        required
+        [(ngModel)]="user.name"
+      />
+      <div class="d-block invalid-feedback">{{ err.name }}</div>
+    </div>
+    <div class="form-group">
+      <input
+        type="email"
+        placeholder="Email Address"
+        name="email"
+        [(ngModel)]="user.email"
+      />
+      <small class="form-text"
+        >This site uses Gravatar so if you want a profile image, use a Gravatar
+        email</small
+      >
+      <div class="d-block invalid-feedback">{{ err.email }}</div>
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        placeholder="Password"
+        name="password"
+        minLength="6"
+        [(ngModel)]="user.password"
+      />
+      <div class="d-block invalid-feedback">{{ err.password }}</div>
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        name="password2"
+        minLength="6"
+        [(ngModel)]="user.password2"
+      />
+      <div class="d-block invalid-feedback">{{ err.password2 }}</div>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Register" />
+  </form>
+  <p class="my-1">Already have an account? <a href="login.html">Sign In</a></p>
+</section>

@@ -1,0 +1,15 @@
+<section class="container">
+  <h1 class="large text-primary">Dashboard</h1>
+  <p class="lead"><i class="fas fa-user"></i> Welcome {{ userDetails.name }}</p>
+  when we don't have the profile {{ err.msg }} @if (err.msg!='') {
+  <div class="my-2">
+    <a [routerLink]="['/create-profile']" class="btn btn-danger">
+      <i class="fas fa-user-minus"></i>
+
+      Create account
+    </a>
+  </div>
+  } @else {
+  <div>hello from else</div>
+  }
+</section>
