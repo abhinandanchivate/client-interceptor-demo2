@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, HttpClientModule, JsonPipe],
+  imports: [FormsModule, JsonPipe],
   providers: [HttpClient, AuthService, Router], // providers are responsible for loading the service instance / singleton
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',

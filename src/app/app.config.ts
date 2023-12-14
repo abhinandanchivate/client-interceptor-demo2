@@ -14,7 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(
       withInterceptors([
         headerInterceptor,
-        // timeCalculatorInterceptor,
+        timeCalculatorInterceptor,
         // loggerInterceptor,
         // retryInterceptor({ count: 3, delay: 2000 }),
       ]) // seq of declarations : its gooing to follow the seq for execution.

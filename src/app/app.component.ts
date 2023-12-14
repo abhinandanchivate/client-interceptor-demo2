@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EnvironmentInjector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './core/components/layouts/navbar/navbar.component';

@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [HttpClientModule, RouterModule, JsonPipe],
+  imports: [RouterModule, JsonPipe],
   providers: [HttpClient, DashboardService, ProfileService],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
