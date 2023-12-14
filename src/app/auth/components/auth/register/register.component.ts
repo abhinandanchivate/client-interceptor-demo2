@@ -45,12 +45,12 @@ export class RegisterComponent {
           this.router.navigate(['/dashboard']);
         },
         (err) => {
-          err.error.errors.forEach((e: any) => {
+          err.error.forEach((e: any) => {
             // console.log(e.param);
             // console.log(e.msg);
             this.err[e.param] = e.msg;
           });
-          console.log(this.err);
+          console.log(JSON.stringify(err.er));
           // console.log(err.error.errors[0].param);
           // console.log(err.error.errors[0].msg);
         }

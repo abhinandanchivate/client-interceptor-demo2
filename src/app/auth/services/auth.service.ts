@@ -14,6 +14,6 @@ export class AuthService {
   registerUser(user: IRegisterUser) {
     //http://localhost:5000/api/users
     //post method
-    return this.httpClient.post('http://localhost:5005/api/users', user);
+    return this.httpClient.post('/api/users', user);
   }
 }

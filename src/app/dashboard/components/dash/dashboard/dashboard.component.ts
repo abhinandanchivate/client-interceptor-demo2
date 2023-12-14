@@ -4,17 +4,19 @@ import { DashboardService } from '../../../services/dashboard.service';
 import { ProfileService } from '../../../../profile/services/profile.service';
 import { JsonPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { DashboardActionComponent } from '../dashboard-action/dashboard-action.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterModule, JsonPipe],
+  imports: [RouterModule, DashboardActionComponent, JsonPipe],
   providers: [HttpClient, DashboardService, ProfileService],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent implements OnInit {
   userDetails: any = {};
+  profile: any = null;
   err: any = {};
   constructor(
     private dashboardService: DashboardService,
@@ -28,10 +30,12 @@ export class DashboardComponent implements OnInit {
       console.log(this.userDetails);
     });
     this.profileService.getProfile().subscribe(
-      (res) => {},
+      (res) => {
+        this.profile = res;
+      },
       (err) => {
-        console.log(err.error);
-        this.err = err.error;
+        console.log(err.errors);
+        this.err = err.errors;
       }
     );
   }

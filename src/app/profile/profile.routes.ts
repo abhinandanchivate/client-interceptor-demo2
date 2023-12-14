@@ -6,4 +6,11 @@ export const profileRoutes = [
         (c) => c.CreateProfileComponent
       ),
   },
+  {
+    path: 'add-experience',
+    loadComponent: () =>
+      import('./components/forms/add-experience/add-experience.component').then(
+        (c) => c.AddExperienceComponent
+      ),
+  },
 ];
