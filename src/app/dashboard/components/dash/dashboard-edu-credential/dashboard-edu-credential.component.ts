@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './dashboard-edu-credential.component.html',
-  styleUrl: './dashboard-edu-credential.component.css'
+  styleUrl: './dashboard-edu-credential.component.css',
 })
 export class DashboardEduCredentialComponent {
-
+  edu: any[] = [];
 }

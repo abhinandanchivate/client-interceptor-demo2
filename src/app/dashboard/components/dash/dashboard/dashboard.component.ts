@@ -5,11 +5,19 @@ import { ProfileService } from '../../../../profile/services/profile.service';
 import { JsonPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DashboardActionComponent } from '../dashboard-action/dashboard-action.component';
+import { DashboardExpCredentialComponent } from '../dashboard-exp-credential/dashboard-exp-credential.component';
+import { DashboardEduCredentialComponent } from '../dashboard-edu-credential/dashboard-edu-credential.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterModule, DashboardActionComponent, JsonPipe],
+  imports: [
+    RouterModule,
+    DashboardActionComponent,
+    DashboardExpCredentialComponent,
+    DashboardEduCredentialComponent,
+    JsonPipe,
+  ],
   providers: [HttpClient, DashboardService, ProfileService],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
@@ -40,4 +48,13 @@ export class DashboardComponent implements OnInit {
     );
   }
   // /api/auth : get method : to get user details..
+
+  deleteExp(id: string) {
+    console.log('insdie hte dashboard component' + id);
+    // exp id ==> we want to delete the exp.
+    this.profileService.deleteExperience(id).subscribe((res) => {
+      console.log(res);
+      this.profile = res;
+    });
+  }
 }

@@ -13,4 +13,11 @@ export const profileRoutes = [
         (c) => c.AddExperienceComponent
       ),
   },
+  {
+    path: 'edit-profile/:id',
+    loadComponent: () =>
+      import('./components/forms/create-profile/create-profile.component').then(
+        (c) => c.CreateProfileComponent
+      ),
+  },
 ];

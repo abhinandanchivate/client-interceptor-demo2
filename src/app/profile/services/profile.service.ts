@@ -32,4 +32,10 @@ export class ProfileService {
   addExperience(experience: any) {
     return this.httpClient.put('/api/profile/experience', experience); //, httpHeaders
   }
+
+  deleteExperience(expId: string) {
+    //api/profile/experience/:exp_id
+
+    return this.httpClient.delete('/api/profile/experience/' + expId);
+  }
 }

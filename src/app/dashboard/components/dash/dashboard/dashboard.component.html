@@ -10,6 +10,13 @@
     </a>
   </div>
   } @else {
-  <div><app-dashboard-action></app-dashboard-action></div>
+  <div>
+    {{ profile.experience | json }}
+    <app-dashboard-action></app-dashboard-action>
+    <app-dashboard-exp-credential
+      [exp]="profile.experience"
+      (emitter)="deleteExp($event)"
+    ></app-dashboard-exp-credential>
+  </div>
   }
 </section>
